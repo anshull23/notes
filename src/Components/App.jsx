@@ -66,7 +66,7 @@ function App() {
       {newNote && (
         <Zoom in={true}>
           <div className="plus" onClick={handlePlus}>
-            <AddIcon className="plus-btn" sx={{ fontSize: 60 }} />
+            <AddIcon className="plus-btn" />
           </div>
         </Zoom>
       )}

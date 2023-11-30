@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <h1>
-        <EventNoteIcon sx={{ fontSize: 25 }}/> MyNotes
+        <EventNoteIcon className="header-icon"/> MyNotes
       </h1>
     </header>
   );
