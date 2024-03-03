@@ -21,7 +21,7 @@ function App() {
       axios.get('https://notes-q1rr6r07z-anshuls-projects-4572fa6d.vercel.app/get')
       .then(result => setNotes(result.data))
       .catch(err => console.log(err))
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(delay);
   },[change]);
