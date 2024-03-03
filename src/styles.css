@@ -1,0 +1,314 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    background: #eee;
+    background-image: url("https://www.transparenttextures.com/patterns/polonez-pattern.png");
+  }
+  
+  header {
+    background-color: #5EBBEF;
+    padding: 0.5% 4%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .header-icon{
+    transform: scale(1.2);
+  }
+
+  header h1 {
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 500;
+    font-size: 1.8rem;
+  }
+
+  div .title{
+    height: auto;
+    overflow: auto;
+    font-weight: 500;
+  }
+
+  .title{
+    position: relative;
+    margin: 1.75% auto 0.75% auto;
+    width: 70%;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    padding-left: 20px;
+  }
+  
+
+  form.create-note {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    background: #C3E2FF;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+    height: 240px;
+  }
+
+  form.create-note textarea {
+    background: transparent;
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+  }
+
+  .noteTitle{
+    font-weight: 600;
+    height: 40px;
+  }
+
+  .noteContent{
+    margin-bottom: 30px;
+    font-weight: 300;
+  }
+  
+  .display-note{
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    background: #C3E2FF;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+    height: 240px;
+  }
+
+  .dis-content{
+    overflow: auto;
+    height: 160px;
+  }
+
+  .dis-h3{
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+    overflow: auto;
+    font-weight: 300;
+}
+
+  .allNotes{
+    padding: 10px;
+    margin-top: 1.75%;
+    margin-left: 5%;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .plus{
+    background: #F5F5F5;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 13%;
+    height: 200px;
+    margin: 8px 0 50px 80px;
+    float: left;
+    text-align: center;
+    line-height: 190px;
+    vertical-align: middle;
+  }
+  
+  .plus-btn{
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    transform: scale(4);
+  }
+
+  .note {
+    position: relative;
+    background: #C3E2FF;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 13%;
+    height: 200px;
+    margin: 8px 0 50px 80px;
+    float: left;
+  }
+
+  .cardTitle{
+    height: 130px;
+    overflow: auto;
+    padding: 5px;
+  }
+
+  .note h1 {
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  button{
+    position: absolute;
+    bottom: 15px;
+    background: #5EBBEF;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+    padding: 6px;
+  }
+
+  @media (min-width: 768px){
+
+  .delete,.add{
+    right: 15px;
+  }
+  .open{
+    left: 15px;
+  }
+}
+    
+  @media (max-width: 767px){
+    
+    header{
+      padding: 1.5% 4%;
+    }
+
+    .header-icon{
+      transform: scale(1.3);
+      padding-top: 6px;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+    }
+
+    .title{
+      position: relative;
+      margin: 5% auto 2% auto;
+      width: 75%;
+      font-size: 1rem;
+      font-weight: bolder;
+      padding-left: 15px;
+    }
+
+    form.create-note {
+      width: 75%;
+      padding: 15px;
+      border-radius: 20px;
+      height: 400px;
+    }
+
+    form.create-note textarea {
+      font-size: 1rem;
+      padding: 0px;
+    }
+
+    .noteTitle{
+      font-weight: 600;
+      height: 40px;
+    }
+  
+    .noteContent{
+      font-weight: 300;
+      height: 280px;
+    }
+
+    .display-note{
+      width: 75%;
+      padding: 15px;
+      border-radius: 20px;
+      height: 400px;
+    }
+  
+    .dis-content{
+      overflow: auto;
+      height: 320px;
+    }
+  
+    .dis-h3{
+      padding: 0px;
+      font-size: 1em; 
+    }
+
+    .allNotes{
+      padding: 0;
+      margin-top: 7%;
+      margin-left: 5%;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .plus{
+      border-radius: 10px;
+      padding: 2%;
+      width: 90%;
+      height: 50px;
+      margin: 2% 5%;
+      text-align: center;
+      line-height: 45px;
+      vertical-align: middle;
+    }
+    
+    .plus-btn{
+      border-radius: 50%;
+      transform: scale(1.5);
+    }
+
+    .note {
+      border-radius: 10px;
+      padding: 2%;
+      width: 90%;
+      height: 50px;
+      margin: 2% 5%;
+    }
+
+    .cardTitle{
+      height: auto;
+      padding: 5px;
+      width: 70%;
+    }
+  
+    .note h1 {
+      font-size: 1em;
+      margin-bottom: 6px;
+      font-weight: 550;
+      width: 70%;
+    }
+
+    .add{
+      right: 15px;
+    }
+
+    .delete{
+      right: 10px;
+      bottom: 8px;
+    }
+    
+    .open{
+      bottom: 8px;
+      right: 60px;
+    }
+  }
+
+
+
+
+
+ 
+
