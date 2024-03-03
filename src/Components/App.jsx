@@ -1,52 +1,50 @@
-import React, { useState } from "react";
+/* eslint-disable no-restricted-globals */
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Note from "./Notes";
 import CreateArea from "./CreateArea";
 import Display from "./Display";
 import AddIcon from "@mui/icons-material/Add";
 import Zoom from "@mui/material/Zoom";
+import axios from "axios";
 
 function App() {
-  const [notes, setNotes] = useState([
-    {
-      title: "Sample Title 1",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    {
-      title: "Sample Title 2",
-      content:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    },
-  ]);
+  const [change, setChange] = useState(true);
+  const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState(false);
   const [title, setTitle] = useState("New Note");
   const [newDisplay, setNewDisplay] = useState("");
   const [displayID, setID] = useState();
 
-  function addNote(newNote) {
-    setNotes((prevNotes) => {
-      return [...prevNotes, newNote];
-    });
-  }
+  useEffect(() => {
+    const delay = setTimeout(() => { 
+      axios.get('https://notes-q1rr6r07z-anshuls-projects-4572fa6d.vercel.app/get')
+      .then(result => setNotes(result.data))
+      .catch(err => console.log(err))
+    }, 1000);
+
+    return () => clearTimeout(delay);
+  },[change]);
 
   function changeTitle(text) {
     setTitle(text);
   }
 
   function deleteNote(id) {
-    setNotes((prevNotes) => {
-      return prevNotes.filter((noteItem, index) => {
-        return index !== id;
-      });
-    });
+    axios.delete('https://notes-q1rr6r07z-anshuls-projects-4572fa6d.vercel.app/delete/'+id)
+    .catch(err => console.log(err));
     setNewNote(false);
     setTitle("New Note");
+    setChange(!change);
   }
 
   function handlePlus() {
     setNewNote(false);
-    setTitle("New Note");
+    setTitle("New Note"); 
+  }
+
+  function handleChange() {
+    setChange(!change);
   }
 
   return (
@@ -60,7 +58,7 @@ function App() {
       {newNote ? (
         <Display id={displayID} content={newDisplay} onDelete={deleteNote} />
       ) : (
-        <CreateArea onAdd={addNote} />
+        <CreateArea onChange={handleChange}/>
       )}
       <h3 className="allNotes">Your Notes</h3>
       {newNote && (
@@ -74,9 +72,9 @@ function App() {
         return (
           <Note
             key={index}
-            id={index}
-            title={noteItem.title}
-            content={noteItem.content}
+            id={noteItem._id}
+            title={noteItem.note.title}
+            content={noteItem.note.content}
             onNote={changeTitle}
             newNote={setNewNote}
             onDisplay={setNewDisplay}
